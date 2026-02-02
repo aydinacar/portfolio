@@ -1,5 +1,6 @@
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { motion } from 'framer-motion'
 import Link from 'next/link'
 interface ProjectCardProps {
   title: string
@@ -10,33 +11,39 @@ interface ProjectCardProps {
 }
 export default function ProjectCard({ title, description, tech, points, href }: ProjectCardProps) {
   return (
-    <Link href={href}>
-      <Card className="hover:shadow-lg transition">
-        <CardHeader>
-          <CardTitle className="text-xl">{title}</CardTitle>
-        </CardHeader>
+    <motion.div
+      whileHover={{ y: -6 }}
+      transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+      className="group"
+    >
+      <Link href={href}>
+        <Card className="hover:shadow-lg transition">
+          <CardHeader>
+            <CardTitle className="text-xl">{title}</CardTitle>
+          </CardHeader>
 
-        <CardContent className="space-y-4">
-          <p className="text-muted-foreground">{description}</p>
+          <CardContent className="space-y-4">
+            <p className="text-muted-foreground">{description}</p>
 
-          <div className="flex flex-wrap gap-2">
-            {tech.map(t => (
-              <Badge
-                key={t}
-                variant="secondary"
-              >
-                {t}
-              </Badge>
-            ))}
-          </div>
+            <div className="flex flex-wrap gap-2">
+              {tech.map(t => (
+                <Badge
+                  key={t}
+                  variant="secondary"
+                >
+                  {t}
+                </Badge>
+              ))}
+            </div>
 
-          <ul className="list-disc list-inside text-sm text-muted-foreground">
-            {points.map(p => (
-              <li key={p}>{p}</li>
-            ))}
-          </ul>
-        </CardContent>
-      </Card>
-    </Link>
+            <ul className="list-disc list-inside text-sm text-muted-foreground">
+              {points.map(p => (
+                <li key={p}>{p}</li>
+              ))}
+            </ul>
+          </CardContent>
+        </Card>
+      </Link>
+    </motion.div>
   )
 }
