@@ -2,7 +2,6 @@
 
 import Projects from '@/components/projects'
 import Hero from '@/components/hero'
-import Header from '@/components/header'
 import Experience from '@/components/experience'
 import About from '@/components/about'
 import Contact from '@/components/contact'
