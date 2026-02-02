@@ -18,7 +18,7 @@ export default function Projects() {
           />
 
           <ProjectCard
-            href="/projects/business-management-panel"
+            href="/projects/business-management"
             title="Business Management Panel"
             description="Internal dashboard for managing products, orders and users."
             tech={['React', 'Vue', 'Node.js']}

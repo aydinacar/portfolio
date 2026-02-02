@@ -1,7 +1,14 @@
-'use client'
-
+import type { Metadata } from 'next'
 import { Badge } from '@/components/ui/badge'
 import Block from '@/components/project/block'
+export const metadata: Metadata = {
+  title: 'Admin Dashboard Platform',
+  description: 'Role-based admin dashboard built with Next.js, React and Tailwind CSS.',
+  openGraph: {
+    title: 'Admin Dashboard Platform',
+    description: 'Case study: scalable admin dashboard with role-based access and optimized performance.'
+  }
+}
 export default function AdminDashboardProject() {
   return (
     <main className="min-h-screen bg-background text-foreground">
