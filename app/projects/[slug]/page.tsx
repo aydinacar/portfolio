@@ -1,35 +1,6 @@
 import { notFound } from 'next/navigation'
 import { Metadata } from 'next'
-
-const projects = {
-  'admin-dashboard': {
-    title: 'Admin Dashboard Platform',
-    description: 'Role-based admin dashboard built with Next.js, React and Tailwind CSS.',
-    overview:
-      'A scalable admin dashboard designed for managing complex datasets with role-based access and reusable UI components.',
-    tech: ['Next.js', 'React', 'Tailwind', 'REST API'],
-    contributions: [
-      'Designed reusable table & form components',
-      'Implemented role-based access control',
-      'Optimized rendering performance'
-    ],
-    outcome: 'Used as the main admin tool across teams with improved performance and maintainability.'
-  },
-
-  'business-management': {
-    title: 'Business Management Panel',
-    description: 'Internal business management dashboard for products, orders and users.',
-    overview:
-      'A unified internal panel replacing multiple fragmented tools with a clean and maintainable architecture.',
-    tech: ['React', 'Vue', 'Node.js'],
-    contributions: [
-      'Built modular frontend architecture',
-      'Implemented server-driven tables',
-      'Worked closely with backend teams'
-    ],
-    outcome: 'Reduced manual workflows and became the core internal business tool.'
-  }
-}
+import { projects } from '@/data/projects'
 
 // ---- SEO ----
 export async function generateMetadata(props: { params: Promise<{ slug: string }> }): Promise<Metadata> {
